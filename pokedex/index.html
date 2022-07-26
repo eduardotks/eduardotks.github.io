@@ -14,7 +14,7 @@
   <title>Pokédex</title>
 </head>
 <body>
-  <audio src="./audio/poke.mp3" controls autoplay loop hidden>
+  <audio id="player" src="./audio/poke.mp3" controls autoplay loop hidden>
     <p>Seu navegador não suporta o elemento áudio </p>
     </audio>
   <main>
@@ -44,3 +44,15 @@
 
 </body>
 </html>
+
+<script>
+  //ao clicar em algum local da tela o player é automaticamente iniciado.
+  document.addEventListener('click', musicPlay);
+  function musicPlay() {
+      let player = document.getElementById('player');
+
+      document.getElementById('player').play();
+      player.volume = 0.5;
+      document.removeEventListener('click', musicPlay);
+  }
+</script>
